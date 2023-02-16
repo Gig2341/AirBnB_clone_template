@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 import uuid
 from datetime import datetime
-import models
+
 
 '''this module represents the base model'''
 
-class BaseModel():
+class BaseModel:
 	'''
 		This class represents the base model
 	'''
-	def __init__(self, id, created_at, updated_at):
+	def __init__(self, *args, **kwargs):
 		"""
 		Initializes the BaseModel class
 		
@@ -28,7 +28,7 @@ class BaseModel():
 		"""
 			string representaion of the class
 		"""
-		return [__class__.__name__] (self.id) self.__dict__
+		return '[{}] ({}) {}'.format(self.__class__.__name__, self.id, self.__dict__)
 
 	def save(self):
 		"""
